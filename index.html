@@ -23,8 +23,28 @@ display:block;
 .address{
 text-align:center;
 padding:8px;
-font-weight:bold;
 background:white;
+font-weight:bold;
+}
+
+/* INFO COLUMNS */
+.columns{
+display:flex;
+flex-wrap:wrap;
+padding:10px;
+background:#ffffff;
+}
+
+.column{
+flex:1;
+min-width:250px;
+padding:15px;
+box-sizing:border-box;
+}
+
+.column h3{
+margin-top:0;
+color:#003366;
 }
 
 /* MOVING SLIDER */
@@ -36,8 +56,8 @@ padding:10px 0;
 
 .slide-track{
 display:flex;
-width:calc(250px * 20);
-animation:scroll 40s linear infinite;
+width:calc(250px * 12);
+animation:scroll 35s linear infinite;
 }
 
 .slide-track img{
@@ -51,7 +71,7 @@ border-radius:6px;
 100%{transform:translateX(-50%);}
 }
 
-/* GALLERY GRID */
+/* IMAGE GALLERY */
 .gallery{
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -64,7 +84,10 @@ width:100%;
 border-radius:6px;
 }
 
-@media(max-width:600px){
+@media(max-width:700px){
+.columns{
+flex-direction:column;
+}
 .gallery{
 grid-template-columns:1fr;
 }
@@ -82,11 +105,44 @@ grid-template-columns:1fr;
 
 <!-- ADDRESS -->
 <div class="address">
-UGOASTROVIS ENERGY LIMITED<br>
+UGOASTROVIS ENERGY LIMITED <br>
 Oil & Gas • Industrial Supplies • Energy Services
 </div>
 
-<!-- MOVING IMAGES -->
+<!-- COMPANY COLUMNS -->
+<div class="columns">
+
+<div class="column">
+<h3>About Us</h3>
+<p>
+UGOASTROVIS ENERGY LIMITED is committed to delivering reliable oil and gas
+services, industrial materials, and energy solutions to businesses and
+organizations.
+</p>
+</div>
+
+<div class="column">
+<h3>Our Services</h3>
+<ul>
+<li>Oil & Gas Supply</li>
+<li>Industrial Equipment</li>
+<li>Energy Solutions</li>
+<li>Logistics & Procurement</li>
+</ul>
+</div>
+
+<div class="column">
+<h3>Contact</h3>
+<p>
+UGOASTROVIS ENERGY LIMITED<br>
+Nigeria<br>
+Email: info@ugoastrovis.com
+</p>
+</div>
+
+</div>
+
+<!-- MOVING IMAGE SLIDER -->
 <div class="slider">
 <div class="slide-track">
 
@@ -95,12 +151,8 @@ Oil & Gas • Industrial Supplies • Energy Services
 <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0073.jpg">
 <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0074.jpg">
 
-<!-- duplicated for continuous loop -->
-
 <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0070.jpg">
 <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0071.jpg">
-<img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0073.jpg">
-<img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0074.jpg">
 
 </div>
 </div>
@@ -116,12 +168,6 @@ Oil & Gas • Industrial Supplies • Energy Services
 
 <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0014.jpg">
 <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0015.jpg">
-
-<img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0016.jpg">
-<img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0019.jpg">
-
-<img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0020.jpg">
-<img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0021.jpg">
 
 </div>
 
