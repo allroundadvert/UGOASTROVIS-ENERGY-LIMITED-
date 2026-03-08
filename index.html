@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UGOASTROVIS ENERGY LIMITED</title>
 <style>
-body{
+body {
   margin:0;
   font-family:Arial, sans-serif;
   background:black;
@@ -13,25 +13,26 @@ body{
 }
 
 /* HEADER */
-header{
+header {
   text-align:center;
-  margin-bottom:5px; /* reduced space under top picture */
+  margin-bottom:5px; /* reduce space under top image */
 }
-header img{
+header img {
   width:100%;
   max-height:300px;
   object-fit:cover;
 }
-
-/* TAGLINE */
-.tagline{
+header h1 {
+  margin:5px 0;
+}
+.tagline {
   text-align:center;
   margin:5px 0;
   font-size:18px;
 }
 
 /* WRITEUP */
-.writeup{
+.writeup {
   text-align:center;
   margin:5px auto;
   max-width:1000px;
@@ -40,11 +41,11 @@ header img{
 }
 
 /* BUTTONS */
-.buttons{
+.buttons {
   text-align:center;
   margin:5px 0;
 }
-.buttons a{
+.buttons a {
   text-decoration:none;
   padding:12px 20px;
   border-radius:6px;
@@ -52,17 +53,11 @@ header img{
   display:inline-block;
   margin:5px;
 }
-.whatsapp{
-  background:#25D366;
-  color:white;
-}
-.call{
-  background:gold;
-  color:black;
-}
+.whatsapp { background:#25D366; color:white; }
+.call { background:gold; color:black; }
 
-/* COLUMNS */
-.columns{
+/* CUSTOMER COLUMNS */
+.columns {
   display:flex;
   flex-wrap:wrap;
   max-width:1000px;
@@ -70,7 +65,7 @@ header img{
   gap:10px;
   padding:10px;
 }
-.column{
+.column {
   flex:1;
   min-width:250px;
   background:rgba(255,215,0,0.05);
@@ -79,25 +74,25 @@ header img{
 }
 
 /* SLIDER */
-.slider{
+.slider {
   display:flex;
   overflow:hidden;
   max-width:900px;
   margin:20px auto;
   height:200px;
 }
-.slider img{
+.slider img {
   width:50%;
   object-fit:cover;
   animation:slide 6s infinite alternate;
 }
-@keyframes slide{
-  0%{transform:translateX(0);}
-  100%{transform:translateX(50%);}
+@keyframes slide {
+  0% {transform:translateX(0);}
+  100% {transform:translateX(50%);}
 }
 
 /* GALLERY */
-.gallery{
+.gallery {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
   gap:6px;
@@ -105,14 +100,46 @@ header img{
   margin:20px auto;
   padding:5px;
 }
-.gallery img{
+.gallery img {
   width:100%;
   height:180px;
   object-fit:cover;
 }
 
+/* FORM */
+form {
+  max-width:1000px;
+  margin:20px auto;
+  padding:20px;
+  background:rgba(255,215,0,0.05);
+  border-radius:6px;
+}
+form h2 {
+  text-align:center;
+  margin-bottom:15px;
+}
+input, select, textarea {
+  width:100%;
+  padding:10px;
+  margin-top:8px;
+  margin-bottom:12px;
+  border:none;
+  border-radius:5px;
+}
+textarea { height:100px; }
+button {
+  width:100%;
+  padding:14px;
+  background:gold;
+  color:black;
+  border:none;
+  border-radius:6px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
 /* FOOTER */
-footer{
+footer {
   text-align:center;
   padding:20px;
 }
@@ -138,31 +165,48 @@ commercial facilities.
   <a class="call" href="tel:09125916221">Call</a>
 </div>
 
-<!-- COLUMNS -->
-<div class="columns">
-  <div class="column">
-    <h3>Head Office</h3>
-    Shop Number 6 UCO Plaza,<br>
-    Electrical Dealers Market,<br>
-    Obosi.
-  </div>
-  <div class="column">
-    <h3>Branch Office</h3>
-    Block A Shop Number 16,<br>
-    Fiat Mega Plaza (Atukason),<br>
-    Electrical Dealers Market,<br>
-    Obosi.
-  </div>
-  <div class="column">
-    <h3>Our Services</h3>
-    Solar Inverter<br>
-    Solar Panels<br>
-    Solar Street Lights<br>
-    Solar Borehole<br>
-    Solar CCTV<br>
-    Remote Gate Control
-  </div>
-</div>
+<!-- CUSTOMER COLUMNS / FORM -->
+<form>
+<h2>Customer Service Request</h2>
+
+<label>Customer Name</label>
+<input type="text" id="name" required>
+
+<label>Phone Number</label>
+<input type="tel" id="phone" required>
+
+<label>Customer Type</label>
+<select id="customerType">
+<option>New Customer</option>
+<option>Old Customer</option>
+</select>
+
+<label>Customer Address (Optional)</label>
+<input type="text" id="address">
+
+<label>Choose Service</label>
+<select id="service">
+<option>Solar Inverter</option>
+<option>Solar Panels</option>
+<option>Solar Street Lights</option>
+<option>Security Light</option>
+<option>Solar Borehole</option>
+<option>Solar CCTV</option>
+<option>Solar Home System</option>
+<option>Solar For Office System</option>
+<option>Solar Powered ATM</option>
+<option>Billboard Solar System</option>
+<option>Remote Gate Control</option>
+</select>
+
+<label>Extra Specifications</label>
+<textarea id="specs" placeholder="Describe installation capacity or special request"></textarea>
+
+<label>Upload Payment Slip</label>
+<input type="file">
+
+<button type="button" onclick="sendRequest()">Submit Request</button>
+</form>
 
 <!-- MOVING IMAGES -->
 <div class="slider">
@@ -170,7 +214,7 @@ commercial facilities.
   <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0071.jpg" alt="">
 </div>
 
-<!-- FULL GALLERY -->
+<!-- GALLERY OF 30+ IMAGES -->
 <div class="gallery">
   <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0073.jpg">
   <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0074.jpg">
@@ -191,4 +235,45 @@ commercial facilities.
   <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0052.jpg">
   <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0055.jpg">
   <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0056.jpg">
-  <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e
+  <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0057.jpg">
+  <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0059.jpg">
+  <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0060.jpg">
+  <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0061.jpg">
+  <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0062(1).jpg">
+  <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0063.jpg">
+  <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0009.jpg">
+  <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0010.jpg">
+  <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0011.jpg">
+  <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0013.jpg">
+  <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0014.jpg">
+  <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0015.jpg">
+</div>
+
+<footer>
+UGOASTROVIS ENERGY LIMITED — Reliable Solar and Electrical Solutions
+</footer>
+
+<script>
+function sendRequest(){
+  var name=document.getElementById("name").value;
+  var phone=document.getElementById("phone").value;
+  var type=document.getElementById("customerType").value;
+  var address=document.getElementById("address").value;
+  var service=document.getElementById("service").value;
+  var specs=document.getElementById("specs").value;
+
+  var message="Hello UGOASTROVIS ENERGY LIMITED,%0A%0A"+
+  "Customer Name: "+name+"%0A"+
+  "Phone: "+phone+"%0A"+
+  "Customer Type: "+type+"%0A"+
+  "Address: "+address+"%0A%0A"+
+  "Service Needed: "+service+"%0A"+
+  "Extra Specifications: "+specs+"%0A%0A"+
+  "Please provide quotation and installation details.";
+
+  window.open("https://wa.me/2348037619073?text="+message);
+}
+</script>
+
+</body>
+</html>
