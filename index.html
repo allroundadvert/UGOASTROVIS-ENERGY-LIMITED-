@@ -137,7 +137,7 @@ Shop Number 6 UCO Plaza, Electrical Dealers Market, Obosi.<br>
 Block A Shop Number 16, Fiat Mega Plaza (Atukason), Electrical Dealers Market, Obosi.
 </div>
 
-<!-- Gallery of 30+ pictures -->
+<!-- FULL 33 IMAGES RESTORED -->
 <div class="gallery">
 <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0070.jpg">
 <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0071.jpg">
@@ -174,7 +174,7 @@ Block A Shop Number 16, Fiat Mega Plaza (Atukason), Electrical Dealers Market, O
 <img src="https://raw.githubusercontent.com/allroundadvert/UGOASTROVIS-ENERGY-LIMITED-/7ccd61a806e272ef2aa2d3d423658b21ec8697d6/IMG-20260308-WA0015.jpg">
 </div>
 
-<!-- Customer Order Form -->
+<!-- FORM (checkbox version kept) -->
 <form>
 <h2>Place Your Orders or Services</h2>
 
@@ -194,26 +194,26 @@ Block A Shop Number 16, Fiat Mega Plaza (Atukason), Electrical Dealers Market, O
 <input type="text" id="address">
 
 <label>Choose Product / Service</label>
-<select id="service">
-<option>Solar Panels</option>
-<option>Solar Battery</option>
-<option>Charge Controllers</option>
-<option>Solar Inverters</option>
-<option>Circuit Breakers</option>
-<option>SPD / VPD / Timer</option>
-<option>Solar Lights</option>
-<option>Solar Camera (CCTV)</option>
-<option>Solar Fans</option>
-<option>Solar Generator</option>
-<option>Solar Pumps</option>
-<option>Solar Kits</option>
-<option>Solar DC Bulbs</option>
-<option>Solar DC Wire / Cables</option>
-<option>Sachet Inverters</option>
-<option>Battery Racks</option>
-<option>Battery Charger</option>
-<option>Panel Profile / Hanger</option>
-</select>
+<div id="service">
+<label><input type="checkbox" value="Solar Panels"> Solar Panels</label><br>
+<label><input type="checkbox" value="Solar Battery"> Solar Battery</label><br>
+<label><input type="checkbox" value="Charge Controllers"> Charge Controllers</label><br>
+<label><input type="checkbox" value="Solar Inverters"> Solar Inverters</label><br>
+<label><input type="checkbox" value="Circuit Breakers"> Circuit Breakers</label><br>
+<label><input type="checkbox" value="SPD / VPD / Timer"> SPD / VPD / Timer</label><br>
+<label><input type="checkbox" value="Solar Lights"> Solar Lights</label><br>
+<label><input type="checkbox" value="Solar Camera (CCTV)"> Solar Camera (CCTV)</label><br>
+<label><input type="checkbox" value="Solar Fans"> Solar Fans</label><br>
+<label><input type="checkbox" value="Solar Generator"> Solar Generator</label><br>
+<label><input type="checkbox" value="Solar Pumps"> Solar Pumps</label><br>
+<label><input type="checkbox" value="Solar Kits"> Solar Kits</label><br>
+<label><input type="checkbox" value="Solar DC Bulbs"> Solar DC Bulbs</label><br>
+<label><input type="checkbox" value="Solar DC Wire / Cables"> Solar DC Wire / Cables</label><br>
+<label><input type="checkbox" value="Sachet Inverters"> Sachet Inverters</label><br>
+<label><input type="checkbox" value="Battery Racks"> Battery Racks</label><br>
+<label><input type="checkbox" value="Battery Charger"> Battery Charger</label><br>
+<label><input type="checkbox" value="Panel Profile / Hanger"> Panel Profile / Hanger</label>
+</div>
 
 <label>Installation</label>
 <select id="installation">
@@ -247,7 +247,13 @@ var name=document.getElementById("name").value;
 var phone=document.getElementById("phone").value;
 var type=document.getElementById("customerType").value;
 var address=document.getElementById("address").value;
-var service=document.getElementById("service").value;
+
+var selected = document.querySelectorAll('#service input[type="checkbox"]:checked');
+var service = "";
+selected.forEach((item) => {
+service += item.value + ", ";
+});
+
 var installation=document.getElementById("installation").value;
 var specs=document.getElementById("specs").value;
 
